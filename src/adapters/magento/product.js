@@ -258,6 +258,7 @@ class ProductAdapter extends AbstractMagentoAdapter {
     ])
 
     const selectFields = (res) => res.map(o => {
+      if (res == null) return false;
       const attributeOptionValues = findOptionValues(o)
       const options = o.options.filter(opt => attributeOptionValues.includes(parseInt(opt.value)))
 
